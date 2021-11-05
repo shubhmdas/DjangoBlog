@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <div>
+      <legend class="border p-2">
+        <h4><small>RECENT POSTS</small></h4>
+        <hr>
+        {% for post in posts %}
+          <h3><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h3>
+          <h6><span class="glyphicon glyphicon-time"></span> Post by {{ post.author }}, {{ post.date_posted|date:"d F Y" }}.</h6>
+          <h6><span class="label label-danger">Food</span> <span class="label label-primary">Ipsum</span></h6><br>
+          <p><small>{{ post.content }}</small></p>
+          <hr>
+        {% endfor %}
+        <br>
+      </legend>
+    </div>
+{% endblock content %}

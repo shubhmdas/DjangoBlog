@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+{% block content %}
+  <div>
+    <legend class="border p-2">
+      <h3>{{ object.title }}</h3>
+      <h6><span class="glyphicon glyphicon-time"></span> Post by {{ object.author }}, {{ object.date_posted|date:"d F Y" }}.</h6>
+      <h6><span class="label label-danger">Food</span> <span class="label label-primary">Ipsum</span></h6><hr class="me-2"><br>
+      <p><small>{{ object.content }}</small></p>
+      <br>
+    </legend>
+  </div>
+{% endblock content %}
