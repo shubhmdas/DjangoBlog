@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-bk_*-t3!n5%0&f&+l@$q9_2@572jb*bw6k6)+$)k0reqg0j3^6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [djangoblogapp1.herokuapp.com]
 
 
 # Application definition
@@ -138,3 +139,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Redirecting users to home page after login
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'
+
+
+django_heroku.settings(locals())
